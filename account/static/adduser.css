@@ -1,0 +1,33 @@
+span.fa{
+	color: black;
+	border-radius: 10px;
+}
+#id_eid{
+
+
+}
+span.fa-envelope-o
+{
+	margin-left: 55px;	
+}
+span.fa-user
+{
+	margin-left: 35px;	
+}
+span.fa-vcard-o
+{
+	margin-left: 35px;	
+}
+.container{
+	width: 100%;
+
+}
+.btnadd{
+	float: right;
+	margin-left: 450px;
+	margin-top: 20px;
+}
+.formpos{
+	margin-left: 80px;
+	color: red
+}

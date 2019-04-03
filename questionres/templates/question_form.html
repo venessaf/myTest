@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{% block title %} Add Question {% endblock title %}
+{% block mystyles %}
+{% load static from staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static  'addque.css' now 'U' %}">
+
+{% endblock mystyles %}
+
+{% block content %}
+	<div class="container jumbotron">
+	
+		<div class="form-group">
+			<h1> Add Question </h1>
+		</div>
+
+		<form class="form-horizontal formpos" action="" method="POST">
+			{% csrf_token %}	
+					
+			<!-- Question -->
+			<div class="input-group mb-3">
+				<label class="form-check-label">Question : &nbsp; </label>
+			    <div class="input-group-prepend">
+			      <span class="input-group-text fa fa-vcard"></span>
+			    </div>
+			    {{form.question}}
+			 </div>
+
+			<!-- Options -->
+			<div class="input-group mb-3">
+				<label class="form-check-label"> Expected Response :   
+				</label>
+			    <div class="input-group-prepend">
+			      <span class="input-group-text fa fa-user"></span>
+			    </div>
+			    {{form.options}}
+			</div>
+
+			<!-- IsMcq -->
+			<div class="input-group mb-3">
+			    {{form.isMcq}}
+				<label class="form-check-label">Given Question is MCQ ? : 
+				</label>
+			</div>
+
+			<!-- Submit Button -->
+			<div class="form-group input-group">
+				 <button type="submit" class="btn btn-success btnadd" required> Add Question</button>
+			</div>
+				
+		</form>		
+	</div>
+</body>
+</html>
+
+{% endblock content %}
+

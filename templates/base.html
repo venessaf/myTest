@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Latest compiled and minified CSS -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	{% load static from staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static  'mytable.css' now 'U' %}">
+	<link rel="stylesheet" type="text/css" href="{% static  'style.css' now 'U' %}">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	{% block mystyles %}
+
+	{% endblock mystyles %}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>{% block title %} DashBoard {% endblock title %}</title>
+</head>
+<body>
+	<!-- <h1> Welcome to DashBoard</h1> -->
+	<div class="wrapper">
+		<nav id="sidebar" class="sticky-top">
+			<!-- Side Bar Header -->
+			<div class="sidebar-header">
+				<span> Admin DashBoard</span>
+			</div>
+
+			<!-- List  -->
+			<ul class="list-unstyled components">
+				<p> Dummy Heading</p>
+				<!-- User Menu -->
+					<li >
+						<a href="{% url 'AllUsers' %}">Users</a>
+					</li>
+
+ 				<!-- End User menu -->
+
+				<!-- Start Question -->
+					<li >
+						<a href="{% url 'AllQuestions' %}">Questions</a>
+					</li>
+
+				<!-- Start Page -->
+		<!-- End Page menu -->
+
+				<!-- Start Contace Us -->
+				<li>
+					<a href="{% url 'AllResponses' %}">Responses</a>
+				</li>
+				<!-- End Contace Us menu -->
+			</ul>
+
+		</nav>
+		<!-- START Navingation BAR -->
+		<div class="content">
+
+			<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+			  <a class="navbar-brand" href="#">Navbar</a>
+			  <!-- Start Toggle Button NavBar -->
+			  <button type="button" id="sidebarCollapse" class="btn btn-success ">
+			  	 <span> <span> <i class="fa fa-angle-double-left "></i></span></span>
+			  </button>
+			  <!-- End Toggle Button NavBar -->
+
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    	<!--  Start Of NavBAr Collapsable Option -->
+			    <ul class="navbar-nav inline">
+
+			      <li class="nav-item">
+			        <a href="{%url 'AddUser' %} "><button class="btn btn-primary nav-btn">
+			        <i class="material-icons" style="font-size:19px">person_add</i>	Add User
+
+			        </button></a>
+			      </li>
+
+			      <li class="nav-item" style="margin-left":10px;>
+			        <a href="{%url 'AddQuestion' %} "><button class="btn btn-primary nav-btn">
+			         <i class="material-icons" style="font-size:19px">note_add</i>
+			         Add Question</button></a>
+			      </li>
+			    </ul>
+
+		  	   <!--  END Of NavBAr Collapsable Option -->
+			  </div>
+			</nav>
+			{% block content%}
+			{% endblock content%}
+
+		</div>
+		<!-- End Navingation BAR -->
+	</div>
+
+
+	<!-- Jquery links -->
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<!-- End Jquery links -->
+
+	 <script>
+		    $(document).ready(function(){
+				$('#sidebarCollapse').on('click',function(){
+					$('#sidebar').toggleClass('active');
+				});
+			});
+	</script>
+
+
+</body>
+</html>
+
+<!--
+<li class="active">
+	<a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" > Responses </a>
+-->
+	<!-- Submenu of User -->
+<!--
+	<ul class="collapse list-unstyled" id="pageSubmenu">
+		<li>
+			<a href="#">by user</a>
+		</li>
+		<li>
+			<a href="#">by count</a>
+		</li>
+		</ul>
+</li>
+
+ -->

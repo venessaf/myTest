@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} Account {% endblock title %}
+{% block mystyles %}
+{% load static from staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'accs.css' %}">
+{% endblock mystyles %}
+
+{%block content%}
+	<h1>Hello Welcome to Account Page</h1>
+{%endblock content%}

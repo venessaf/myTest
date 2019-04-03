@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+{% block title %}  {{que.qid.question}} Details {% endblock title %}
+{% block mystyles %}
+
+{% endblock mystyles %}
+
+{% block content %}
+	<label>{{que.question}}</label>
+	<h5> Expected Responses to this Question : {{que.options}} </h5>
+
+	<h5> Total Number of  User responded to this Question : {{count}} </h5>
+	<div class="tabledata" style="margin-top:0px;">
+		<table class="table " >
+			<!-- Table Header -->
+			<tr>
+				<th>User Name </th>
+				<th>Response</th>
+			</tr>
+			<!-- End Table Header -->
+			{% for r in res_to_question %}
+
+			<tr>
+				<td align="center"> {{ r.uid.fname }} {{ r.uid.lname }} </td>
+				<td> {{ r.uresponse }} </td>
+
+			</tr>
+			{% endfor %}
+			<!--  -->
+
+
+		</table>
+
+
+	</div>
+	<!-- End OF TABLE -->
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block title %}  {{employee.fname}} Details {% endblock title %}
+{% block mystyles %}
+
+{% endblock mystyles %}
+
+{% block content %}
+
+	<label>{{user.fname}} {{user.lname}}</label>
+	<h5> Total Number of  Responses by {{user.fname}} : {{count}} </h5>
+	<div class="tabledata">
+        {% if res_of_user is !none %}
+		<table class="table ">
+			<!-- Table Header -->
+			<tr>
+				<th>Question Id</th>
+				<th>Responses</th>
+			</tr>
+			<!-- End Table Header -->
+			{% for r in res_of_user %}
+
+			<tr>
+				<td align="center"> {{ r.qid.question }} </td>
+				<td> {{ r.uresponse }} </td>
+
+			</tr>
+			{% endfor %}
+			<!--  -->
+
+
+		</table>
+        {% endif res_of_user %}
+
+	</div>
+
+	<!-- End OF TABLE -->
+{% endblock content %}

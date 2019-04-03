@@ -1,0 +1,66 @@
+{% extends 'base.html'%}
+{% block title %} Question Update {% endblock title %}
+{% block mystyles %}
+{% load static from staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static  'addque.css' now 'U' %}">
+
+{% endblock mystyles %}
+
+{% block content %}
+	<div class="container jumbotron">
+				
+		<div class="form-group">
+			<h1> Update Question </h1>
+		</div>
+
+		<form class="form-horizontal formpos" method="POST" action="/question/update/{{ question.qid }}">
+				{% csrf_token %}
+					
+			<!-- question Name -->
+					
+			<div class="input-group mb-3">
+				<label class="form-check-label"> Question : &nbsp; </label>
+			    <div class="input-group-prepend">
+			      <span class="input-group-text  fa fa-edge"></span>
+			    </div>
+			    <input type="text" class="form-control" value="{{question.question}}" name="question" >
+		    </div>
+					
+			<!-- Question Type -->
+				
+			<div class="input-group mb-3">
+				<label class="form-check-label">IsMcq: &nbsp;&nbsp;&nbsp;&nbsp;  
+				</label>
+			    <div class="input-group-prepend">
+			      <span class="input-group-text fa fa-bookmark"></span>
+			    </div>
+					<input type="checkbox" class="form-control" value="{{question.isMcq}}" name="isMcq" >
+				</div>
+					
+					<!-- Question Options -->
+					
+			<div class="input-group mb-3">
+				<label class="form-check-label">Response: &nbsp;&nbsp;&nbsp;&nbsp;  
+				</label>
+			    <div class="input-group-prepend">
+			      <span class="input-group-text fa fa-laptop"></span>
+			    </div>
+					<input type="text" class="form-control" value="{{question.options}}" name="options" >
+				</div>
+					
+								
+		
+			<!-- Submit Button -->
+			<div class="form-group input-group">
+				<button type="submit" class="btn btn-success btnadd" > Update question</button>
+			</div>
+				<!--  -->
+		</form>
+
+			</div>
+		
+	</div>
+{% endblock content %}
+
+
+

@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% block title %} Users Data {% endblock title %}
+{% block mystyles %}
+{% endblock mystyles %}
+
+{% block content %}
+	<!-- Start OF TABLE -->
+	<div class="tabledata"> 
+						 	
+		<table class="table ">
+			<!-- Table Header -->
+			<tr>
+				<th>Employee Id</th>
+				<th>Name</th>
+				<th colspan="4">Email</th>				
+				
+			</tr>
+			<!-- End Table Header -->
+			{% for employee in employees %}
+
+			<tr>
+				<td align="center"> {{ employee.eid }} </td>
+				<td> {{ employee.fname }}  {{ employee.lname }}  </td>
+				<td> {{ employee.email }} </td>
+				
+				<td><a href="{% url 'UserDetail' employee.uid %}"><span class="fa fa-eye" title="view" ></span></a></td>
+				<td><a href="/employee/edit/{{ employee.uid }}"><span class="fa fa-pencil" title="edit" ></span></a></td>
+				<td><a href="/employee/delete/{{ employee.uid }}"><span class="fa fa-trash" title="delete"></span></a></td>
+				
+			</tr>
+			{% endfor %}
+			<!--  -->
+
+
+		</table>
+		
+	
+	</div>	
+	<!-- End OF TABLE -->
+
+{% endblock content %}	
+

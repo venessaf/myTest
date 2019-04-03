@@ -1,0 +1,36 @@
+body{
+	font-size: 20px;
+	color: white;
+}
+tr:nth-child(even) {
+    background-color: #455A64;
+    color: white;
+}
+
+.tabledata{
+	margin-left: 0px;
+}
+
+td{
+	text-align: center;
+}
+tr:nth-child(odd) {
+    background-color: #455A64;
+    color:white;
+    /*border: 12px;*/
+}
+tr:hover {
+    background-color: #0288D1;
+    color:black;
+    border: 10px;
+}
+th{
+	background-color: #000000;
+	color: white;
+	text-align: center;
+
+}
+span.fa{
+	/*background-color: white;*/
+	color: white;
+}

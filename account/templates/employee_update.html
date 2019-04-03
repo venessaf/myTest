@@ -1,0 +1,72 @@
+{% extends 'base.html'%}
+{% block title %} Update User {% endblock title %}
+{% block mystyles %}
+{% load static from staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static  'adduser.css' now 'U' %}">
+{% endblock mystyles %}
+
+{% block content %}
+	<div class="container jumbotron">
+		<div class="form-group">
+			<h1> Update Employee </h1>
+		</div>
+
+		<form class="form-horizontal formpos" method="POST" action="/employee/update/{{ employee.uid }}">
+			{% csrf_token %}
+			<!-- Employee ID -->
+			<div class="input-group mb-3">
+				<label class="form-check-label">Employee ID &nbsp;&nbsp;
+				 </label>
+			    <div class="input-group-prepend">
+			      <span class="input-group-text fa fa-vcard"></span>
+			    </div>
+			    <input type="text" size="19" class="" value="{{employee.eid}}" name="eid" >
+		    </div>
+		
+			<!-- FName -->
+					
+			<div class="input-group mb-3">
+				<label class="form-check-label">FirstName
+				</label>
+			    <div class="input-group-prepend">
+			      <span class="input-group-text fa fa-user"></span>
+			    </div>
+			    <input type="text" class="" value="{{employee.fname}}" name="fname" >
+			</div>
+			
+			<!-- LName -->
+					
+			<div class="input-group mb-3">
+				<label class="form-check-label">FirstName   
+				</label>
+			    <div class="input-group-prepend">
+			      <span class="input-group-text fa fa-user"></span>
+			    </div>
+			    <input type="text" class="" value="{{employee.lname}}" name="lname">
+			</div>
+					
+			<!-- Email -->
+					
+			<div class="input-group mb-3">
+				<label class="form-check-label">Email &nbsp;&nbsp;&nbsp;&nbsp;
+				</label>
+			    <div class="input-group-prepend">
+			      <span class="input-group-text fa fa-envelope-o"></span>
+			    </div>
+			    <input type="text" class="" value="{{employee.email}}" name="email" >
+			</div>
+					
+
+
+			<!-- Submit Button -->
+			<div class="form-group input-group">
+				<button type="submit" class="btn btn-success btnadd" > Update Employee</button>
+			</div>
+					<!--  -->
+		</form>
+			
+	</div>
+
+
+{% endblock content %}
+
